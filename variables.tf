@@ -1,5 +1,6 @@
 variable "os" {
   description = "The OS reference to search for"
+  type        = string
   validation {
     condition     = contains(["rhel8", "amazon2"], var.os)
     error_message = "Invalid input, options: \"rhel8\" or \"amazon2\"."
@@ -7,7 +8,8 @@ variable "os" {
 }
 
 variable "architecture" {
-  description = "The image architecture"
+  description = "OS architecture of the AMI (ie: i386 or x86_64)."
+  type        = string
   validation {
     condition     = contains(["x86_64", "arm64"], var.architecture)
     error_message = "Invalid input, options: \"x86_64\" or \"arm64\"."

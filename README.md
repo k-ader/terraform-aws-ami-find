@@ -27,6 +27,5 @@ output "ami_date" {
   value = "${module.ami-find.creation_date}"
 }
 
-
 ```
 
